@@ -1,10 +1,9 @@
 import { useState } from "react";
 import styles from "./mainBack.module.css";
-import addIcon from '../assets/addicon.png';
-import trashIcon from '../assets/trashicon.png';
-import upArrow from '../assets/uparrow.png';
-import downArrow from '../assets/downarrow.png';
-
+import addIcon from "../assets/addicon.png";
+import trashIcon from "../assets/trashicon.png";
+import upArrow from "../assets/uparrow.png";
+import downArrow from "../assets/downarrow.png";
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
@@ -22,11 +21,7 @@ function Todo() {
     }
 
     function removeTask(index) {
-        const taskElement = document.getElementById(`task-${index}`);
-        taskElement.classList.add(styles.fadeOut);
-        setTimeout(() => {
-            setTasks(tasks.filter((_, i) => i !== index));
-        }, 500);
+        setTasks(tasks.filter((_, i) => i !== index));
     }
 
     function moveTaskUp(index) {
@@ -47,12 +42,10 @@ function Todo() {
 
     return (
         <div className={styles.full}>
-            {/* Navbar */}
             <div className={styles.navbar}>
                 <h1 className={styles.todo}>ToDo</h1>
             </div>
 
-            {/* Input Section */}
             <div className={styles.add}>
                 <textarea
                     className={styles.eventsample}
@@ -60,47 +53,19 @@ function Todo() {
                     onChange={handleInputChange}
                     value={taskAdd}
                     placeholder="Enter Events Here"
-                    onInput={(e) => {
-                        e.target.style.height = "auto";
-                        e.target.style.height = `${e.target.scrollHeight}px`;
-                    }}
                 />
-                <img 
-                    src={addIcon} 
-                    alt="Add Icon" 
-                    className={styles.addIcon} 
-                    onClick={addTask} 
-                />
+                <img src={addIcon} alt="Add Icon" className={styles.addIcon} onClick={addTask} />
             </div>
 
-            {/* Task Display Section */}
             <div className={styles.display}>
                 <ul className={styles.taskList}>
                     {tasks.map((task, index) => (
-                        <li key={index} id={`task-${index}`} className={styles.taskOne}>
-                            {/* Task text with proper wrapping */}
+                        <li key={index} className={styles.taskOne}>
                             <span className={styles.taskContent}>{task}</span>
-
-                            {/* Icon Container for Spacing */}
                             <div className={styles.iconContainer}>
-                                <img
-                                    src={upArrow}
-                                    alt="Move Up"
-                                    className={styles.uparrow}
-                                    onClick={() => moveTaskUp(index)}
-                                />
-                                <img
-                                    src={downArrow}
-                                    alt="Move Down"
-                                    className={styles.downarrow}
-                                    onClick={() => moveTaskDown(index)}
-                                />
-                                <img
-                                    src={trashIcon}
-                                    alt="Delete"
-                                    className={styles.trashIcon2}
-                                    onClick={() => removeTask(index)}
-                                />
+                                <img src={upArrow} className={styles.uparrow} onClick={() => moveTaskUp(index)} />
+                                <img src={downArrow} className={styles.downarrow} onClick={() => moveTaskDown(index)} />
+                                <img src={trashIcon} className={styles.trashIcon2} onClick={() => removeTask(index)} />
                             </div>
                         </li>
                     ))}
