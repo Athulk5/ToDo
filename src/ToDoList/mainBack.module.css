@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+html {
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.full {
+    background-color: rgb(12.94% 13.33% 13.33%);
+    min-height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: rgb(42, 43, 46);
+    color: #fff;
+    width: 100%;
+    max-width: 100vw;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 30px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.todo {
+    font-family: "KoHo", serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 60px;
+}
+
+.add {
+    width: 1002px;
+    background-color: rgb(60, 62, 62);
+    border-radius: 7px;
+    margin-top: 100px;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    font-family: "Kodchasan", serif;
+    font-weight: 400;
+    font-style: normal;
+} 
+
+.eventsample {
+    border: none;
+    resize: none;
+    background-color: rgb(60, 62, 62);  
+    color: #fff;
+    width: 1021px;
+    min-height: 75px;
+    max-height: 200px;
+    overflow-y: hidden;
+    outline: none;
+    border-radius: 7px;
+    font-size: 20px;
+    font-family: "Lexend", serif;
+    font-weight: 500;
+    margin-left: 50px;
+    padding: 14px 14px;
+}
+
+.eventsample::placeholder {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Kodchasan", serif;
+    opacity: 0.5;
+    font-weight: 400;
+    padding-top: 9px;
+    padding-left: 20px;
+}
+
+.eventsample:focus {
+    color: #fff;
+    font-weight: 700;
+    padding-left: 14px;
+    padding-top: 15px;
+}
+
+.addIcon {
+    margin-right: 15px;
+    margin-left: 22px;
+}
+
+.display {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: visible;
+    padding-bottom: 40px;
+    perspective: 1000px;
+}
+
+.display ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Ensures the list has no default styles */
+.taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styling for each task item */
+.taskOne {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(60, 62, 62);
+    color: #fff;
+    width: 1002px;
+    margin-left: 200px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Ensures text wraps properly */
+    align-items: center;
+    justify-content: space-between; /* Keeps icons at a distance from text */
+    padding: 14px 20px;
+    font-family: "Lexend", serif;
+    font-weight: 600;
+    font-size: 20px;
+    word-wrap: break-word; /* Ensures long words break */
+    overflow-wrap: break-word; /* Ensures text never overflows */
+    white-space: pre-wrap; /* Allows multi-line text */
+}
+
+/* Ensures text takes up the available space */
+.taskContent {
+    flex: 1; /* Makes text take up remaining space */
+    padding-right: 20px; /* Adds spacing between text and icons */
+    word-break: break-word; /* Extra safety for long words */
+}
+
+/* Container for icons to ensure proper spacing */
+.iconContainer {
+    display: flex;
+    gap: 12px; /* Adds spacing between icons */
+}
+
+/* Individual icon styling */
+.trashIcon2, 
+.uparrow, 
+.downarrow {
+    width: 20px;
+    height: 26px;
+    cursor: pointer;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .taskOne {
+        width: auto; /* Adjust width for responsiveness */
+        margin-left: 10px; /* Reduce left margin */
+        padding: 12px; /* Reduce padding */
+    }
+
+    .iconContainer {
+        gap: 8px; /* Reduce gap between icons */
+    }
+
+    .trashIcon2, 
+    .uparrow, 
+    .downarrow {
+        width: 18px; /* Slightly smaller icons */
+        height: 24px;
+    }
+}
