@@ -2,8 +2,8 @@ import { useState } from "react";
 import styles from "./mainBack.module.css";
 import addIcon from "../assets/addicon.png";
 import trashIcon from "../assets/trashicon.png";
-import upArrow from "../assets/uparrow.png";
-import downArrow from "../assets/downarrow.png";
+import upArrow from "../assets/upicon2.png";
+import downArrow from "../assets/downicon.png";
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
