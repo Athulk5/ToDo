@@ -1,5 +1,10 @@
 import { useState } from "react";
 import styles from "./mainBack.module.css";
+import addIcon from '../assets/addicon.png';
+import trashIcon from '../assets/trashicon.png';
+import upArrow from '../assets/uparrow.png';
+import downArrow from '../assets/downarrow.png';
+
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
@@ -61,7 +66,7 @@ function Todo() {
                     }}
                 />
                 <img 
-                    src="/src/assets/addicon.png" 
+                    src={addIcon} 
                     alt="Add Icon" 
                     className={styles.addIcon} 
                     onClick={addTask} 
@@ -79,19 +84,19 @@ function Todo() {
                             {/* Icon Container for Spacing */}
                             <div className={styles.iconContainer}>
                                 <img
-                                    src="/src/assets/upicon2.png"
+                                    src={upArrow}
                                     alt="Move Up"
                                     className={styles.uparrow}
                                     onClick={() => moveTaskUp(index)}
                                 />
                                 <img
-                                    src="/src/assets/downicon.png"
+                                    src={downArrow}
                                     alt="Move Down"
                                     className={styles.downarrow}
                                     onClick={() => moveTaskDown(index)}
                                 />
                                 <img
-                                    src="/src/assets/trashicon.png"
+                                    src={trashIcon}
                                     alt="Delete"
                                     className={styles.trashIcon2}
                                     onClick={() => removeTask(index)}
